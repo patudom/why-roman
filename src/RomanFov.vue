@@ -828,7 +828,7 @@ const DSS_OFFSET_Y_DEG = -DSS_DEC_OFFSET_ARCSEC / 3600;
 const OVERALL_DISPLAY_OFFSET = 70*(0.5 * 11 / 3600);
 const roman = useFootprint({
   id: "roman-footprint",
-  label: "Roman",
+  label: "Roman (infrared)",
   footprint: romanFootprint,
   color: "#e100ff",
   linewidth: 2, // faking the linewidth can leave artifacts
@@ -868,7 +868,7 @@ const hubble = useFootprint({
 
 const jwstCentered = useFootprint({
   id: "jwst-footprint-centered",
-  label: "Webb",
+  label: "Webb (infrared)",
   footprint: jwstFootprint,
   color: "#ff6d00",
   // offsetXDeg: -0.075, // left
@@ -877,7 +877,7 @@ const jwstCentered = useFootprint({
 });
 const hubbleCentered = useFootprint({
   id: "hubble-footprint-centered",
-  label: "Hubble",
+  label: "Hubble (visible)",
   footprint: hubbleFootprint,
   color: "#18d2ed", //https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/mission/35th-anniversary/hubble-35-anniversary-graphic-blue-rgb.png?w=1341&h=1413&fit=clip&crop=faces%2Cfocalpoint
   // offsetXDeg: 0.1,
