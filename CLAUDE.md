@@ -75,9 +75,11 @@ Leave stale typos alone too; they aren't yours to fix.
 Presentational: flat props in, events out. `RomanFov.vue` owns the layers,
 camera, footprints and WWT store; children never touch them. Giving a child a
 layer means giving it the engine store, which breaks: `@cosmicds/vue-toolkit`'s
-published bundle inlines its own pinia, so anything importing the store from
-there sees a different pinia than the app installed and throws. That is why
-several shared components live here as local copies rather than imports.
+published bundle inlines `@wwtelescope/engine-pinia` (pinia itself is correctly
+external), so it registers its own `wwt-engine` store and anything importing the
+store from there reads a different one than the app is driving. That is why
+several shared components live here as local copies rather than imports. See
+`TOOLKIT-UPSTREAM.md` for this and four sibling toolkit defects.
 
 When a component needs to show something new, **reach for the smallest change
 that gets there.** The failure mode to avoid is answering a modest request with
